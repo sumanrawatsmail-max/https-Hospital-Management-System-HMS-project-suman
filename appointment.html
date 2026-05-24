@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Module - Hospital System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="appointment">
+    <div class="container">
+        <header>
+            <div class="brand">
+                <span>📅</span>
+                <div>
+                    <h1>Appointment Module</h1>
+                    <p class="page-meta">Book appointments online, select a doctor and date, and manage the full appointment list.</p>
+                </div>
+            </div>
+            <nav class="navbar">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+                <a class="nav-link" href="doctor.html">Doctor</a>
+                <a class="nav-link" href="patient.html">Patient</a>
+                <a class="nav-link" href="billing.html">Billing</a>
+                <a class="nav-link" href="admit.html">Admit Panel</a>
+            </nav>
+        </header>
+
+        <section class="section hero-card">
+            <div>
+                <h2>Online Appointment Booking</h2>
+                <p>Reserve doctor slots, assign patient details, and handle appointment scheduling with a clean, modern booking form.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80" alt="Online booking" style="width: 100%; max-width: 420px; border-radius: 24px; object-fit: cover;">
+        </section>
+
+        <div class="section grid-2">
+            <div class="card">
+                <h3>Book Appointment</h3>
+                <form id="appointmentForm" class="form-grid">
+                    <div class="form-group">
+                        <label for="patientName">Patient name</label>
+                        <input id="patientName" name="patientName" type="text" placeholder="Full patient name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentDoctor">Select doctor</label>
+                        <select id="appointmentDoctor" name="doctorId" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Appointment date</label>
+                        <input id="date" name="date" type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred time</label>
+                        <input id="time" name="time" type="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">Reason for visit</label>
+                        <textarea id="reason" name="reason" placeholder="Describe the issue"></textarea>
+                    </div>
+                    <button type="submit">Book Appointment</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Your Appointments</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th><th>Reason</th><th>Action</th></tr>
+                        </thead>
+                        <tbody id="appointmentListBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="app.js"></script>
+</body>
+</html>

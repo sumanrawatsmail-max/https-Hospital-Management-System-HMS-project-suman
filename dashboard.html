@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="dashboard">
+    <div class="container">
+        <header>
+            <div class="brand">
+                <span>🏥</span>
+                <div>
+                    <h1>Hospital Management</h1>
+                    <p class="page-meta">Access all modules for doctors, patients, appointments, billing, and admissions.</p>
+                </div>
+            </div>
+            <nav class="navbar">
+                <a class="nav-link" href="doctor.html">Doctor</a>
+                <a class="nav-link" href="patient.html">Patient</a>
+                <a class="nav-link" href="appointment.html">Appointment</a>
+                <a class="nav-link" href="billing.html">Billing</a>
+                <a class="nav-link" href="admit.html">Admit Panel</a>
+            </nav>
+        </header>
+
+        <section class="section hero-card">
+            <div>
+                <h2>Modern Hospital System</h2>
+                <p>One flow for healthcare management with intuitive pages for each module. Click any card to jump directly into the feature you need.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1511174511562-5f7f18b6bb0d?auto=format&fit=crop&w=800&q=80" alt="Hospital dashboard" style="width: 100%; max-width: 420px; border-radius: 24px; object-fit: cover;">
+        </section>
+
+        <section class="section stats-grid">
+            <div class="metric">
+                <span>Doctors</span>
+                <strong id="doctorCount">0</strong>
+            </div>
+            <div class="metric">
+                <span>Patients</span>
+                <strong id="patientCount">0</strong>
+            </div>
+            <div class="metric">
+                <span>Appointments</span>
+                <strong id="appointmentCount">0</strong>
+            </div>
+            <div class="metric">
+                <span>Bills</span>
+                <strong id="billCount">0</strong>
+            </div>
+        </section>
+
+        <section class="section grid-3">
+            <div class="module-card">
+                <h3>Doctor Management</h3>
+                <p>Add doctors, manage schedules, and review upcoming patient meetings.</p>
+                <a class="action-btn module-button" href="doctor.html">Open Doctor Module</a>
+            </div>
+            <div class="module-card">
+                <h3>Patient Records</h3>
+                <p>Capture patient details quickly and store their medical condition for appointments and billing.</p>
+                <a class="action-btn module-button" href="patient.html">Open Patient Module</a>
+            </div>
+            <div class="module-card">
+                <h3>Online Booking</h3>
+                <p>Schedule appointments, choose doctors and dates, and keep every booking in one location.</p>
+                <a class="action-btn module-button" href="appointment.html">Open Appointment Module</a>
+            </div>
+            <div class="module-card">
+                <h3>Billing</h3>
+                <p>Build bills automatically with treatment, medicine, room, and additional fees.</p>
+                <a class="action-btn module-button" href="billing.html">Open Billing Module</a>
+            </div>
+            <div class="module-card">
+                <h3>Admit Panel</h3>
+                <p>Control hospital users, review data, and manage doctors from the admission dashboard.</p>
+                <a class="action-btn module-button" href="admit.html">Open Admit Panel</a>
+            </div>
+        </section>
+
+        <section class="section stats-box">
+            <h3>Upcoming Appointments</h3>
+            <ul id="upcomingAppointments" style="margin: 0; padding-left: 20px; color: rgba(255,255,255,0.92);"></ul>
+        </section>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="app.js"></script>
+</body>
+</html>

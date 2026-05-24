@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Module - Hospital System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="patient">
+    <div class="container">
+        <header>
+            <div class="brand">
+                <span>🩺</span>
+                <div>
+                    <h1>Patient Module</h1>
+                    <p class="page-meta">Register patients, track medical needs, and store patient history in the system.</p>
+                </div>
+            </div>
+            <nav class="navbar">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+                <a class="nav-link" href="doctor.html">Doctor</a>
+                <a class="nav-link" href="appointment.html">Appointment</a>
+                <a class="nav-link" href="billing.html">Billing</a>
+                <a class="nav-link" href="admit.html">Admit Panel</a>
+            </nav>
+        </header>
+
+        <section class="section hero-card">
+            <div>
+                <h2>Patient Records</h2>
+                <p>Keep patient information up to date and easy to manage, with a fast intake form and searchable patient table.</p>
+            </div>
+ 
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1MxmGL0KDN1jd2CgrHXkTBx_v3D8wiUllkg&s"alt="Patient care" style="width: 100%; max-width: 420px; border-radius: 24px; object-fit: cover;"> </section>
+
+        <div class="section grid-2">
+            <div class="card">
+                <h3>Add New Patient</h3>
+                <form id="patientForm" class="form-grid">
+                    <div class="form-group">
+                        <label for="patientName">Patient name</label>
+                        <input id="patientName" name="patientName" type="text" placeholder="Full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input id="age" name="age" type="number" placeholder="Age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact number</label>
+                        <input id="contact" name="contact" type="tel" placeholder="Phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="condition">Reason / Condition</label>
+                        <textarea id="condition" name="condition" placeholder="E.g. Fever, checkup, consultation"></textarea>
+                    </div>
+                    <button type="submit">Add Patient</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Patient Directory</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Name</th><th>Gender</th><th>Age</th><th>Contact</th><th>Condition</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody id="patientListBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="app.js"></script>
+</body>
+</html>

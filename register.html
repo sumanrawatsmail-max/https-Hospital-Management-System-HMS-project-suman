@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Hospital System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hero-card" style="max-width: 700px; margin: 0 auto;">
+            <div>
+                <h2>Create Your Access</h2>
+                <p>Register for the hospital management system and start managing appointments, patients, billing, and admissions.</p>
+            </div>
+            <div class="card" style="margin-top: 24px;">
+                <form id="registerForm" class="form-grid">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input id="username" name="username" type="text" placeholder="Choose a username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" placeholder="Create a strong password" required>
+                    </div>
+                    <button type="submit">Register</button>
+                </form>
+                <p class="page-meta" style="margin-top: 16px; text-align: center;">Already registered? <a href="login.html" style="color: #c7d2ff;">Login here</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            showToast('Registration complete — please login.');
+            setTimeout(()=> window.location = 'login.html', 900);
+        });
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2200);
+        }
+    </script>
+</body>
+</html>

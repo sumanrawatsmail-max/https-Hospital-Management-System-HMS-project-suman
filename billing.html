@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Module - Hospital System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="billing">
+    <div class="container">
+        <header>
+            <div class="brand">
+                <span>💳</span>
+                <div>
+                    <h1>Billing Module</h1>
+                    <p class="page-meta">Generate hospital bills automatically with treatment, medicine, room and service charges.</p>
+                </div>
+            </div>
+            <nav class="navbar">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+                <a class="nav-link" href="doctor.html">Doctor</a>
+                <a class="nav-link" href="patient.html">Patient</a>
+                <a class="nav-link" href="appointment.html">Appointment</a>
+                <a class="nav-link" href="admit.html">Admit Panel</a>
+            </nav>
+        </header>
+        
+
+        <section class="section hero-card">
+            <div>
+                <h2>Quick Bill Builder</h2>
+                <p>Create accurate invoices with automatic totals so your hospital billing stays clean and fast.</p>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnWg0IK_KAOhUv4zh4CfG38IPq0xACWUXbXw&s" alt="Hospital billing" style="width: 100%; max-width: 420px; border-radius: 24px; object-fit: cover;">
+        </section>
+
+        <div class="section grid-2">
+            <div class="card">
+                <h3>Generate Hospital Bill</h3>
+                <form id="billingForm" class="form-grid">
+                
+                    <div class="form-group">
+                        <label for="treatmentCharges">Treatment charges</label>
+                        <input id="treatmentCharges" name="treatmentCharges" class="bill-input" type="number" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="medicineCharges">Medicine charges</label>
+                        <input id="medicineCharges" name="medicineCharges" class="bill-input" type="number" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="roomCharges">Room charges</label>
+                        <input id="roomCharges" name="roomCharges" class="bill-input" type="number" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="otherCharges">Other charges</label>
+                        <input id="otherCharges" name="otherCharges" class="bill-input" type="number" min="0" value="0">
+                    </div>
+                    <div class="form-group summary-box">
+                        <h3>Estimated total</h3>
+                        <p id="billTotal">₹0.00</p>
+                    </div>
+                    <button type="submit">Generate Bill</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Recent Billing History</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Total</th><th>Action</th></tr>
+                        </thead>
+                        <tbody id="billingListBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="app.js"></script>
+</body>
+</html>
